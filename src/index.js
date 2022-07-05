@@ -1,12 +1,23 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import AppProviders from "./AppProviders";
-import "./styles/main.scss";
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import './index.css';
+import App from './App';
+import { makeServer } from './server';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
+
+// Call make Server
+makeServer();
 
 ReactDOM.render(
-  <AppProviders>
-    <App />
-  </AppProviders>,
-  document.getElementById("root")
+  <React.StrictMode>
+    <BrowserRouter>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root')
 );

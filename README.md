@@ -1,39 +1,56 @@
-## Project Setup
+<div align="center">
+  <img src="https://res.cloudinary.com/donqbxlnc/image/upload/v1650084912/logo_tzzpf3.png" height="100" width="100" alt="logo"/>
+  
+# Socially
+  A Social Media App 
+</div>
 
-1. Install dependencies
+## **How to install and run locally ?**
 
-```bash
-npm install
 ```
-
-2. Start React app
-
-```bash
-npm start
+$ git clone https://github.com/Rohanmond/Socially.git
+$ cd Socially
+$ npm install
+$ npm start
 ```
+## **Features -**
 
-## Global Dependencies Required
+- Feed Posts
+- Explore & Trending Posts
+- Infinite Scrolling on Explore page
+- Add , Update & Delete Post
+- Add , Update & Delete Comment
+- Reply in comments
+- Add delete bookmark
+- User Profile Update
+- Follow / Unfollow
+- Search User
+- Like/unlike and Comment on Post
+- Like on Comments
+- activities section in profile page
+- Authentication:
+  - User Signup
+  - User Login
+  - User Logout
+ - Fully Responsive
+ - share post
 
-- [Node 10+](https://node.js.org)
-- [NPM 5+](https://node.js.org)
-- [Git](https://git-scm.com/)
 
-## Accounts Required
 
-- [Heroku Account](https://signup.heroku.com/)
-- [Netlify Account](https://netlify.com)
 
-## Recommended Tools
 
-- [VS Code](https://code.visualstudio.com)
-- [Google Chrome](https://www.google.com/chrome/)
+## **Built with -**
 
-## Extensions for VSCode
+- React JS
+- Redux Toolkit 
+- React Router v6
+- Tailwind CSS
 
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+## **Demo -**
 
-## Helpful Links
 
-- [Cloudinary Documentation](https://cloudinary.com/documentation/)
-- [React Query Documentation](https://react-query.tanstack.com/)
-- [Date Functions Documentation](https://date-fns.org)
+https://user-images.githubusercontent.com/52956782/168848701-9af61773-8372-4752-b611-ab4af3175d62.mov
+
+
+
+
