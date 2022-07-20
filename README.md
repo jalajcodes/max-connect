@@ -13,7 +13,7 @@ $ npm install
 $ npm start
 ```
 
-## **Features -**
+## **Features**
 
 - Feed Posts
 - Explore & Trending Posts
@@ -35,7 +35,7 @@ $ npm start
 - Fully Responsive
 - Share Post
 
-## **Tech -**
+## **Tech Stack**
 
 - React JS
 - Redux Toolkit
@@ -44,6 +44,6 @@ $ npm start
 - MirageJS
 - Mockbee
 
-## **Demo -**
+## **Demo**
 
 https://max-connect.netlify.app
