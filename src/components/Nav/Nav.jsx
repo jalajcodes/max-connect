@@ -86,14 +86,14 @@ export const Nav = () => {
             onClick={() => navigate("/explore")}
             className="cursor-pointer flex items-center"
           >
-            <i class="ri-window-line"></i>
+            <i className="ri-window-line"></i>
           </li>
           <li
             title="feed"
             onClick={() => navigate("/")}
             className="cursor-pointer flex items-center"
           >
-            <i class="ri-home-heart-line"></i>
+            <i className="ri-home-heart-line"></i>
           </li>
 
           <li className="cursor-pointer">

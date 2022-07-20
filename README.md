@@ -45,3 +45,5 @@ $ npm start
 - Mockbee
 
 ## **Demo -**
+
+https://max-connect.netlify.app
