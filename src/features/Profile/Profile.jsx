@@ -125,7 +125,7 @@ export const Profile = () => {
                   {isCurrUser ? (
                     <button
                       onClick={() => setShowProfileModal(true)}
-                      className="py-1 px-2 ring-1 rounded-md hover:bg-secondary-background dark:hover:bg-dark-bg-paper text-sm sm:text-xs"
+                      className="py-1 px-2 border-2 border-primary rounded-md hover:bg-primary hover:text-white dark:hover:bg-primary text-sm sm:text-xs"
                     >
                       Edit profile
                     </button>

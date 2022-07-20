@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Nav, ScrollToTop } from "../../components";
+import { Nav } from "../../components";
 import "./PostFeedPage.css";
 import { useOutsideClickHandler } from "../../custom-hooks";
 
@@ -116,178 +116,157 @@ export const PostFeedPage = () => {
         </div>
       ) : null}
       <main className="p-4">
-        {/*divider */}
-        <div className="flex justify-center">
-          {/* news feed */}
-          <div className="flex flex-col  w-2/5 md:w-4/5 sm:w-full  gap-4 ">
-            {/* create post section */}
+        <div className="flex justify-center mx-auto max-w-7xl">
+          <div
+            className={`grid ${
+              location.pathname.includes("explore")
+                ? "grid-cols-3"
+                : "grid-cols-4"
+            } gap-4 md:w-full md:grid-cols-1`}
+          >
             {!location.pathname.includes("/explore") ? (
-              <div
-                className="flex flex-col bg-nav-background  dark:bg-dark-secondary-background 
-              text-txt-color
-              dark:text-dark-txt-primary rounded-lg drop-shadow-2xl dark:divide-primary divide-y divide-primary"
-              >
-                <div className="p-4">
-                  <h1 className="text-xl">Create Post</h1>
-                </div>
-                <div className="p-4">
-                  <div className="flex flex-col gap-4 grow">
-                    {/** enter text section */}
-                    <div className="flex items-center gap-4 grow">
-                      <img
-                        className="h-14 w-14 rounded-full object-cover"
-                        src={user?.pic}
-                        alt="profile-img"
-                      />
-                      <input
-                        className="grow focus:outline-none font-normal text-txt-secondary-color text-lg dark:bg-dark-secondary-background dark:text-dark-txt-secondary"
-                        placeholder="Write something here"
-                        value={postInputForm.content}
-                        onChange={(e) =>
-                          setPostInputForm({
-                            ...postInputForm,
-                            content: e.target.value,
-                          })
-                        }
-                        type="text"
-                      />
-                    </div>
-                    {postInputForm.pic ? (
-                      <div className="relative">
-                        <img src={postInputForm.pic} alt="post pic" />
-                        <i
-                          onClick={() =>
-                            setPostInputForm({ ...postInputForm, pic: "" })
-                          }
-                          className="absolute top-1 right-1 text-4xl text-txt-hover-color cursor-pointer fas fa-times-circle"
-                        ></i>
-                      </div>
-                    ) : null}
-
-                    <ul className="border-t border-t-primary flex pt-4 gap-4 font-light items-center">
-                      <li className="relative flex items-center gap-3 bg-secondary-background dark:bg-dark-bg-paper py-2 px-3 rounded-md cursor-pointer">
+              <div>
+                <div
+                  className="flex flex-col bg-nav-background  dark:bg-dark-secondary-background 
+                text-txt-color
+                dark:text-dark-txt-primary rounded-lg drop-shadow-2xl"
+                >
+                  <div className="px-4 pt-4">
+                    <h1 className="text-xl">Create Post</h1>
+                  </div>
+                  <div className="p-4">
+                    <div className="flex flex-col gap-4 grow">
+                      <div className="flex items-center gap-4 grow dark:bg-dark-bg-paper bg-secondary-background p-3 rounded-md">
                         <img
-                          className="h-6 w-6"
-                          src="https://res.cloudinary.com/donqbxlnc/image/upload/v1650190023/07_dffvl5.png"
-                          alt="phot"
+                          className="h-14 w-14 rounded-full object-cover"
+                          src={user?.pic}
+                          alt="profile-img"
                         />
-                        <p className="text-primary text-sm font-semibold">
-                          Photo/GIF
-                        </p>
                         <input
-                          className="cursor-pointer absolute w-28 opacity-0"
-                          accept="image/apng, image/avif, image/gif, image/jpeg, image/png, image/svg+xml, image/jpg,image/webp"
-                          type="file"
-                          onChange={onFileChange}
-                        />
-                      </li>
-                      <li
-                        onClick={(e) => {
-                          setShowEmojis(true);
-                          if (
-                            e.target.childNodes.length === 1 &&
-                            e.target.innerText !== "Emojis"
-                          ) {
+                          className="grow p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary font-normal text-txt-secondary-color text-sm dark:bg-dark-secondary-background dark:text-dark-txt-secondary"
+                          placeholder={`What's on your mind?`}
+                          value={postInputForm.content}
+                          onChange={(e) =>
                             setPostInputForm({
                               ...postInputForm,
-                              content:
-                                postInputForm.content + e.target.innerText,
-                            });
+                              content: e.target.value,
+                            })
                           }
-                        }}
-                        className="relative flex items-center gap-3 bg-secondary-background dark:bg-dark-bg-paper py-2 px-3 rounded-md cursor-pointer"
-                      >
-                        <img
-                          className="h-6 w-6"
-                          src="https://res.cloudinary.com/donqbxlnc/image/upload/v1652278871/Sunglasses_Emoji_be26cc0a-eef9-49e5-8da2-169bb417cc0b_grande_tz0jya.png"
-                          alt="emojis"
+                          type="text"
                         />
-                        <p className="text-primary text-sm font-semibold">
-                          Emojis
-                        </p>
-                        {showEmojis ? (
-                          <div
-                            ref={emojiContainerRef}
-                            className="absolute w-48 p-4 flex flex-wrap justify-center items-center gap-2 rounded-lg dark:bg-dark-bg-paper  bg-secondary-background "
-                          >
-                            {emojiArray.map((el) => {
-                              return (
-                                <span
-                                  key={el}
-                                  className="cursor-pointer text-2xl"
-                                >
-                                  {el}
-                                </span>
-                              );
-                            })}
-                          </div>
-                        ) : null}
-                      </li>
-                    </ul>
+                      </div>
+                      {postInputForm.pic ? (
+                        <div className="relative">
+                          <img src={postInputForm.pic} alt="post pic" />
+                          <i
+                            onClick={() =>
+                              setPostInputForm({ ...postInputForm, pic: "" })
+                            }
+                            className="absolute top-1 right-1 text-4xl text-txt-hover-color cursor-pointer fas fa-times-circle"
+                          ></i>
+                        </div>
+                      ) : null}
+
+                      <ul className="flex gap-4 font-light items-center justify-center">
+                        <li className="relative grow flex items-center gap-3 bg-secondary-background dark:bg-dark-bg-paper py-2 px-3 rounded-md cursor-pointer">
+                          <span className="text-2xl">🖼️</span>
+                          <p className="text-primary text-sm font-semibold">
+                            Image
+                          </p>
+                          <input
+                            className="cursor-pointer absolute w-28 opacity-0"
+                            accept="image/apng, image/avif, image/gif, image/jpeg, image/png, image/svg+xml, image/jpg,image/webp"
+                            type="file"
+                            onChange={onFileChange}
+                          />
+                        </li>
+                        <li
+                          onClick={(e) => {
+                            setShowEmojis(true);
+                            if (
+                              e.target.childNodes.length === 1 &&
+                              e.target.innerText !== "Emojis"
+                            ) {
+                              setPostInputForm({
+                                ...postInputForm,
+                                content:
+                                  postInputForm.content + e.target.innerText,
+                              });
+                            }
+                          }}
+                          className="relative grow flex items-center gap-3 bg-secondary-background dark:bg-dark-bg-paper py-2 px-3 rounded-md cursor-pointer"
+                        >
+                          <span className="text-2xl">😇</span>
+                          <p className="text-primary text-sm font-semibold">
+                            Emojis
+                          </p>
+                          {showEmojis ? (
+                            <div
+                              ref={emojiContainerRef}
+                              className="absolute w-48 right-20 top-5 p-4 flex flex-wrap justify-center items-center gap-2 rounded-lg dark:bg-dark-bg-paper bg-secondary-background"
+                            >
+                              {emojiArray.map((el) => {
+                                return (
+                                  <span
+                                    key={el}
+                                    className="cursor-pointer text-2xl"
+                                  >
+                                    {el}
+                                  </span>
+                                );
+                              })}
+                            </div>
+                          ) : null}
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => {
+                      dispatch(
+                        addPost({
+                          postData: { ...postInputForm, userId: user._id },
+                          authToken: token,
+                        })
+                      );
+                      setPostInputForm({ content: "", pic: "" });
+                    }}
+                    disabled={postInputForm.content ? false : true}
+                    className={`mb-4 mx-4 p-2 bg-primary active:bg-blue-500 text-white disabled:dark:bg-primary disabled:opacity-50 rounded-lg ${
+                      postInputForm.content
+                        ? ""
+                        : "cursor-not-allowed bg-txt-hover-color active:bg-txt-hover-color"
+                    }`}
+                  >
+                    Post
+                  </button>
+                </div>
+              </div>
+            ) : null}
+
+            <div className="flex flex-col gap-4 col-span-2">
+              {location.pathname !== "/explore" ? (
+                <div className="flex justify-evenly items-center   bg-nav-background dark:bg-dark-secondary-background dark:text-dark-txt-primary gap-10 rounded-lg drop-shadow-2xl  p-4 sm:p-3 ">
+                  <div
+                    onClick={() => setSubNav("trending")}
+                    className={`cursor-pointer flex gap-1  ${
+                      subNav === "trending" ? "text-primary" : ""
+                    }`}
+                  >
+                    <p>🔥Trending</p>
+                  </div>
+
+                  <div
+                    onClick={() => setSubNav("latest")}
+                    className={`cursor-pointer items-center flex gap-1  ${
+                      subNav === "latest" ? "text-primary" : ""
+                    }`}
+                  >
+                    <i className="far fa-clock"></i>
+                    <p>Latest</p>
                   </div>
                 </div>
-                <button
-                  onClick={() => {
-                    dispatch(
-                      addPost({
-                        postData: { ...postInputForm, userId: user._id },
-                        authToken: token,
-                      })
-                    );
-                    setPostInputForm({ content: "", pic: "" });
-                  }}
-                  disabled={postInputForm.content ? false : true}
-                  className={`mb-4 mx-4 p-2 bg-primary active:bg-blue-500 text-white rounded-lg ${
-                    postInputForm.content
-                      ? ""
-                      : "cursor-not-allowed bg-txt-hover-color active:bg-txt-hover-color"
-                  }`}
-                >
-                  Post
-                </button>
-              </div>
-            ) : null}
-
-            {location.pathname !== "/explore" ? (
-              <div className="flex justify-evenly items-center   bg-nav-background dark:bg-dark-secondary-background dark:text-dark-txt-primary gap-10 rounded-lg drop-shadow-2xl  p-4 sm:p-3 ">
-                <div
-                  onClick={() => setSubNav("trending")}
-                  className={`cursor-pointer flex gap-1  ${
-                    subNav === "trending" ? "text-primary" : ""
-                  }`}
-                >
-                  <p>🔥Trending</p>
-                </div>
-
-                <div
-                  onClick={() => setSubNav("latest")}
-                  className={`cursor-pointer items-center flex gap-1  ${
-                    subNav === "latest" ? "text-primary" : ""
-                  }`}
-                >
-                  <i className="far fa-clock"></i>
-                  <p>Latest</p>
-                </div>
-              </div>
-            ) : null}
-            {/**Scrollable follow chips */}
-            <div className="flex flex-col gap-2  rounded-lg drop-shadow-2xl ">
-              <div className="">
-                <div className="follow-chip-scroll w-full flex gap-1 flex-nowrap overflow-x-scroll">
-                  {allUsers
-                    .filter(
-                      (us) =>
-                        user._id !== us._id &&
-                        !user.following.some((eachUs) => eachUs._id === us._id)
-                    )
-                    .map((el) => {
-                      return <FollowChip key={el._id} user={el} />;
-                    })}
-                </div>
-              </div>
-            </div>
-            {/**Post-feed */}
-            <div className="flex flex-col gap-4">
+              ) : null}
               {filteredPosts.length === 0 ? (
                 <div className="flex justify-center bg-nav-background dark:bg-dark-secondary-background rounded-lg drop-shadow-2xl p-5">
                   <p className="text-xl text-txt-secondary-color dark:text-dark-txt-secondary font-medium">
@@ -344,6 +323,22 @@ export const PostFeedPage = () => {
                 </div>
               )}
               <div ref={loader}></div>
+            </div>
+
+            <div className="flex flex-col gap-2  rounded-lg drop-shadow-2xl ">
+              <div className="">
+                <div className="follow-chip-scroll w-full flex gap-2 flex-wrap">
+                  {allUsers
+                    .filter(
+                      (us) =>
+                        user._id !== us._id &&
+                        !user.following.some((eachUs) => eachUs._id === us._id)
+                    )
+                    .map((el) => {
+                      return <FollowChip key={el._id} user={el} />;
+                    })}
+                </div>
+              </div>
             </div>
           </div>
         </div>

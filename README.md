@@ -1,18 +1,18 @@
 <div align="center">
-  <img src="https://res.cloudinary.com/donqbxlnc/image/upload/v1650084912/logo_tzzpf3.png" height="100" width="100" alt="logo"/>
+  <img src="./public/assets/logo.png" width="180" alt="logo"/>
   
-# Socially
-  A Social Media App 
+  A Social Media App build using React, Redux, Tailwind, MirageJs
 </div>
 
 ## **How to install and run locally ?**
 
 ```
-$ git clone https://github.com/Rohanmond/Socially.git
-$ cd Socially
+$ git clone https://github.com/jalajcodes/max-connect.git
+$ cd max-connect
 $ npm install
 $ npm start
 ```
+
 ## **Features -**
 
 - Feed Posts
@@ -32,25 +32,16 @@ $ npm start
   - User Signup
   - User Login
   - User Logout
- - Fully Responsive
- - share post
+- Fully Responsive
+- Share Post
 
-
-
-
-
-## **Built with -**
+## **Tech -**
 
 - React JS
-- Redux Toolkit 
+- Redux Toolkit
 - React Router v6
 - Tailwind CSS
+- MirageJS
+- Mockbee
 
 ## **Demo -**
-
-
-https://user-images.githubusercontent.com/52956782/168848701-9af61773-8372-4752-b611-ab4af3175d62.mov
-
-
-
-

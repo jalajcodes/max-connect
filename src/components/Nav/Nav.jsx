@@ -42,7 +42,7 @@ export const Nav = () => {
 
   return (
     <nav className="w-full sticky top-0 min h-20 sm:h-18 left-0 right-0 leading-10 z-40 dark:bg-dark-bg-paper drop-shadow-xl bg-nav-background shadow">
-      <div className="flex justify-between relative items-center p-4 sm:p-2  h-full">
+      <div className="flex justify-between relative items-center p-4 sm:p-2  h-full lg:max-w-7xl mx-auto">
         <div
           onClick={() => navigate("/")}
           className="flex gap-2 items-center cursor-pointer"
@@ -86,14 +86,14 @@ export const Nav = () => {
             onClick={() => navigate("/explore")}
             className="cursor-pointer flex items-center"
           >
-            <i className="ri-compass-3-line"></i>
+            <i class="ri-window-line"></i>
           </li>
           <li
             title="feed"
             onClick={() => navigate("/")}
             className="cursor-pointer flex items-center"
           >
-            <i className="ri-home-8-line"></i>
+            <i class="ri-home-heart-line"></i>
           </li>
 
           <li className="cursor-pointer">
@@ -108,21 +108,13 @@ export const Nav = () => {
       </div>
       {showSearch ? (
         <div className="absolute top-0 w-full h-screen flex  justify-center bg-background-dim">
-          <i
-            onClick={() => {
-              setShowSearch(false);
-              setSearchData([]);
-              setSearchInput("");
-            }}
-            className="absolute right-2 sm:mt-24 mt-6 text-dark-txt-primary fas fa-times-circle text-3xl"
-          ></i>
           <div
             ref={searchRef}
             className="sm:w-9/12 w-2/5 mt-6 sm:mt-24 flex flex-col gap-5 items-center"
           >
             <input
               value={searchInput}
-              className="w-full bg-background dark:bg-dark-bg text-dark-txt-secondary rounded-lg focus:outline-none px-4"
+              className="w-full focus:ring-2 focus:ring-primary bg-background dark:bg-dark-bg text-dark-txt-secondary rounded-lg focus:outline-none px-4"
               type="text"
               ref={searchInputRef}
               onChange={(e) => setSearchInput(e.target.value)}
