@@ -65,7 +65,7 @@ export const posts = [
             {
               _id: "asassddfdsfdgsd32323",
               firstName: "Raj",
-              lastName: "Gill",
+              lastName: "Singh",
               username: "raj@gmail.com",
               password: "1234asdf",
               createdAt: "2022-05-12T08:30:12+05:30",
@@ -137,7 +137,7 @@ export const posts = [
             {
               _id: "asassddfdsfdgsd32323",
               firstName: "Raj",
-              lastName: "Gill",
+              lastName: "Singh",
               username: "raj@gmail.com",
               password: "1234asdf",
               createdAt: "2022-05-12T08:30:12+05:30",
@@ -264,7 +264,7 @@ export const posts = [
                         {
                           _id: "asassddfdsfdgsd32323",
                           firstName: "Raj",
-                          lastName: "Gill",
+                          lastName: "Singh",
                           username: "raj@gmail.com",
                           password: "1234asdf",
                           createdAt: "2022-05-12T08:30:12+05:30",
@@ -294,7 +294,7 @@ export const posts = [
             {
               _id: "asassddfdsfdgsd32323",
               firstName: "Raj",
-              lastName: "Gill",
+              lastName: "Singh",
               username: "raj@gmail.com",
               password: "1234asdf",
               createdAt: "2022-05-12T08:30:12+05:30",
@@ -405,7 +405,7 @@ export const posts = [
                         {
                           _id: "asassddfdsfdgsd32323",
                           firstName: "Raj",
-                          lastName: "Gill",
+                          lastName: "Singh",
                           username: "raj@gmail.com",
                           password: "1234asdf",
                           createdAt: "2022-05-12T08:30:12+05:30",
@@ -533,7 +533,7 @@ export const posts = [
                     {
                       _id: "asassddfdsfdgsd32323",
                       firstName: "Raj",
-                      lastName: "Gill",
+                      lastName: "Singh",
                       username: "raj@gmail.com",
                       password: "1234asdf",
                       createdAt: "2022-05-12T08:30:12+05:30",
@@ -591,7 +591,7 @@ export const posts = [
                 {
                   _id: "asassddfdsfdgsd32323",
                   firstName: "Raj",
-                  lastName: "Gill",
+                  lastName: "Singh",
                   username: "raj@gmail.com",
                   password: "1234asdf",
                   createdAt: "2022-05-12T08:30:12+05:30",
@@ -646,7 +646,7 @@ export const posts = [
             {
               _id: "asassddfdsfdgsd32323",
               firstName: "Raj",
-              lastName: "Gill",
+              lastName: "Singh",
               username: "raj@gmail.com",
               password: "1234asdf",
               createdAt: "2022-05-12T08:30:12+05:30",
@@ -763,7 +763,7 @@ export const posts = [
                     {
                       _id: "asassddfdsfdgsd32323",
                       firstName: "Raj",
-                      lastName: "Gill",
+                      lastName: "Singh",
                       username: "raj@gmail.com",
                       password: "1234asdf",
                       createdAt: "2022-05-12T08:30:12+05:30",
