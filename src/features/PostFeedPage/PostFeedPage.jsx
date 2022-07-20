@@ -36,6 +36,7 @@ export const PostFeedPage = () => {
   const [subNav, setSubNav] = useState("latest");
   const [filteredPosts, setFilteredPost] = useState([]);
   const navigate = useNavigate();
+  const imageUploadRef = useRef();
 
   useEffect(() => {
     dispatch(getAllUsers());
@@ -168,16 +169,20 @@ export const PostFeedPage = () => {
                       ) : null}
 
                       <ul className="flex gap-4 font-light items-center justify-center">
-                        <li className="relative grow flex items-center gap-3 bg-secondary-background dark:bg-dark-bg-paper py-2 px-3 rounded-md cursor-pointer">
+                        <li
+                          onClick={() => imageUploadRef.current.click()}
+                          className="relative grow flex items-center gap-3 bg-secondary-background dark:bg-dark-bg-paper py-2 px-3 rounded-md cursor-pointer"
+                        >
                           <span className="text-2xl">🖼️</span>
-                          <p className="text-primary text-sm font-semibold">
+                          <p className="text-primary text-sm font-semibold cursor-pointer">
                             Image
                           </p>
                           <input
-                            className="cursor-pointer absolute w-28 opacity-0"
+                            className="cursor-pointer absolute left-20 w-28 opacity-0 hidden"
                             accept="image/apng, image/avif, image/gif, image/jpeg, image/png, image/svg+xml, image/jpg,image/webp"
                             type="file"
                             onChange={onFileChange}
+                            ref={imageUploadRef}
                           />
                         </li>
                         <li
